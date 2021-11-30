@@ -13,7 +13,15 @@ public VideoGame(String n, String c, int y, boolean con)
   setConsole(con);
 }
 
+public VideoGame()
+{
+  this("Super Mario Bros", "Nintendo", 1985, true);
+}
 
+public VideoGame(String s, boolean con)
+{
+  this(s, "Unknown", 2000, con);
+}
 
 
 
