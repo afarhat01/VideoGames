@@ -75,6 +75,12 @@ public void setConsole(boolean con)
   console = con;
 }
 
+public void discount(int i)
+{
+  i = 1-(i/100);
+  this.setPrice(i*this.getPrice());
+}
+
 public String newVersion(int i)
 {
   return "Name: " + name + " " + i + "\nCompany: " + company + "\nYear: 2021"  + "\nOn Console? " + console;
