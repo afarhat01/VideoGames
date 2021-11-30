@@ -23,8 +23,29 @@ public VideoGame(String s, boolean con)
   this(s, "Unknown", 2000, con);
 }
 
+//Accessor Methods
 
+public String getName()
+{
+  return name;
+}
 
+public String getCompany()
+{
+  return company;
+}
+
+public int getYear()
+{
+  return year;
+}
+
+public boolean getConsole()
+{
+  return console;
+}
+
+//Mutator Methods
 
 public void setName(String n)
 {
@@ -45,5 +66,28 @@ public void setConsole(boolean con)
 {
   console = con;
 }
+
+
+
+public boolean equals(VideoGame v)
+{
+  if (this.getName() == v.getName() && this.getCompany() == v.getCompany())
+  {
+    return true;
+  }
+  return false;
+}
+
+public String toString()
+{
+  return "Name: " + name + "\nCompany: " + company + "\nYear: " + year + "\nOn Console? " + console;
+}
+
+
+
+
+
+
+
 
 }
