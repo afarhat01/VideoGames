@@ -81,9 +81,13 @@ public void discount(int i)
   this.setPrice(i*this.getPrice());
 }
 
-public String newVersion(int i)
+public void newVersion(int i)
 {
-  return "Name: " + name + " " + i + "\nCompany: " + company + "\nYear: 2021"  + "\nOn Console? " + console;
+  String name2 = name + " " + i;
+  double price2 = price + (10*2);
+  this.setName(name2);
+  this.setPrice(price2);
+  this.setYear(2021);
 }
 
 public boolean equals(VideoGame v)
