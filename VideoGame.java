@@ -3,25 +3,23 @@ class VideoGame
 private String name;
 private String company;
 private int year;
+private double price;
 private boolean console;
 
-public VideoGame(String n, String c, int y, boolean con)
+public VideoGame(String n, String c, double p, int y, boolean con)
 {
   setName(n);
   setCompany(c);
   setYear(y);
+  setPrice(p);
   setConsole(con);
 }
 
 public VideoGame()
 {
-  this("Super Mario Bros", "Nintendo", 1985, true);
+  this("Super Mario Bros", "Nintendo", 0, 1985, true);
 }
 
-public VideoGame(String s, boolean con)
-{
-  this(s, "Unknown", 2000, con);
-}
 
 //Accessor Methods
 
@@ -38,6 +36,11 @@ public String getCompany()
 public int getYear()
 {
   return year;
+}
+
+public double getPrice()
+{
+  return price;
 }
 
 public boolean getConsole()
@@ -62,12 +65,20 @@ public void setYear(int y)
   year = y;
 }
 
+public void setPrice(double p )
+{
+  price = p;
+}
+
 public void setConsole(boolean con)
 {
   console = con;
 }
 
-
+public String newVersion(int i)
+{
+  return "Name: " + name + " " + i + "\nCompany: " + company + "\nYear: 2021"  + "\nOn Console? " + console;
+}
 
 public boolean equals(VideoGame v)
 {
@@ -78,9 +89,11 @@ public boolean equals(VideoGame v)
   return false;
 }
 
+
+
 public String toString()
 {
-  return "Name: " + name + "\nCompany: " + company + "\nYear: " + year + "\nOn Console? " + console;
+  return "Name: " + name + "\nCompany: " + company + "\nYear: " + year + "\nPrice: $" + price + "\nOn Console? " + console;
 }
 
 
