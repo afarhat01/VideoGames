@@ -1,11 +1,13 @@
 class VideoGame
 {
+//Instance Data
 private String name;
 private String company;
 private int year;
 private double price;
 private boolean console;
 
+//Main Constructor
 public VideoGame(String n, String c, double p, int y, boolean con)
 {
   setName(n);
@@ -15,9 +17,10 @@ public VideoGame(String n, String c, double p, int y, boolean con)
   setConsole(con);
 }
 
+//Default Constructor
 public VideoGame()
 {
-  this("Super Mario Bros", "Nintendo", 0, 1985, true);
+  this("Super Mario Bros", "Nintendo", 0, 1985, false);
 }
 
 
@@ -75,32 +78,46 @@ public void setConsole(boolean con)
   console = con;
 }
 
+// First additional Method
+/* Disounts the price of a game buy a specefic percent*/
 public void discount(int i)
 {
-  i = 1-(i/100);
-  this.setPrice(i*this.getPrice());
+  if (i < 100 && i > 0)
+  {
+    double d = i;
+    d  = 1-(d/100);
+    d = d*this.getPrice();
+    this.setPrice(d);
+  }
 }
 
+// Second additional Method 
+/*Changes the version into a newer version of the game using by adding the int parameter at the end of the title, removes the old version number, changes the year to 2021, and adds 10 dollars to the price because its a newer version*/
 public void newVersion(int i)
 {
-  String name2 = name + " " + i;
-  double price2 = price + (10*2);
+  if ((this.getName().substring(this.getName().length()-1, this.getName().length()).equals("1"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("2"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("3"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("4"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("5"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("6"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("7"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("8"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("9")))
+  {
+    this.setName(this.getName().substring(0, this.getName().length()-2));
+  }
+  
+  String name2 = this.getName() + " " + i;
   this.setName(name2);
+  double price2 = price + (10*2);
   this.setPrice(price2);
   this.setYear(2021);
 }
 
+//equals method: Checks to see if two VideoGame classes are equal by checking the name of the two games
 public boolean equals(VideoGame v)
 {
-  if (this.getName() == v.getName() && this.getCompany() == v.getCompany())
+  if (this.getName() == v.getName())
   {
     return true;
   }
   return false;
 }
 
-
-
+//toString method to put the class in a string form
 public String toString()
 {
   return "Name: " + name + "\nCompany: " + company + "\nYear: " + year + "\nPrice: $" + price + "\nOn Console? " + console;
