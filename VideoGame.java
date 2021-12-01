@@ -79,7 +79,8 @@ public void setConsole(boolean con)
 }
 
 // First additional Method
-/* Disounts the price of a game buy a specefic percent*/
+/* Disounts the price of a game buy a specefic percent 
+(ex: 20 in int i would be 20% off the whole price)*/
 public void discount(int i)
 {
   if (i < 100 && i > 0)
@@ -92,7 +93,9 @@ public void discount(int i)
 }
 
 // Second additional Method 
-/*Changes the version into a newer version of the game using by adding the int parameter at the end of the title, removes the old version number, changes the year to 2021, and adds 10 dollars to the price because its a newer version*/
+/*Changes the version into a newer version of the game using by adding the int 
+parameter at the end of the title, removes the old version number, changes the year 
+to 2021, and adds 10 dollars to the price because its a newer version*/
 public void newVersion(int i)
 {
   if ((this.getName().substring(this.getName().length()-1, this.getName().length()).equals("1"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("2"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("3"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("4"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("5"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("6"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("7"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("8"))||(this.getName().substring(this.getName().length()-1, this.getName().length()).equals("9")))
